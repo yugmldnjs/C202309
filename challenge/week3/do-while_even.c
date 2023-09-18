@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-	int i = 1;
+	int i = 0;
 	do {
 		// i°¡ Â¦¼ö¸é i + 1
 		if (i % 2 == 0) {

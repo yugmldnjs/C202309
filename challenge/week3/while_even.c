@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-	int i = 1;
+	int i = 0;
 	// i가 10이 되면 반복문 종료
 	while (i < 10) {
 		// i가 짝수면 i + 1
