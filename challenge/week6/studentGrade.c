@@ -30,27 +30,43 @@ void classifyStudents(int scores[], char targetGrade) {
 	}
 }
 
-int sumScores(int scores[], int sum) {
-	/*int sum = 0;*/
 
-	// 모든 점수의 합 계산 및 출력, i < STUDENTS 까지 실행
+// 모든 성적의 합을 구하는 함수 정의
+int sumScores(int scores[]) {
+	int sum = 0;
 	for (int i = 0; i < STUDENTS; i++) {
 		sum += scores[i];
 	}
-	printf("학생들 점수의 총 합은 %d이다", sum);
 	return sum;
 }
 
-double averageScores(int scores[], double average, int sum) {
+
+// 성적의 평균을 구하는 함수 정의
+double averageScores(int scores[]) {
+	int sum = 0;
+	double average = 0;
 	for (int i = 0; i < STUDENTS; i++) {
 		sum += scores[i];
 	}
 	average = (double)sum / STUDENTS;
-	printf("%lf", average);
+	return average;
 }
 
+
+// 학생들의 순위를 출력하는 함수 정의
 void printRanks(int scores[]) {
 	
+	for (int i = 0; i < STUDENTS; i++) {
+		int ranks = 1;
+		for (int j = 0; j < STUDENTS; j++) {
+			
+			// scores[i] < scores[j] 일 경우 ranks + 1
+			if (scores[i] < scores[j]) {
+				ranks += 1;
+			}
+		}
+		printf("%d 학생의 순위는 %d 입니다.\n", i + 1, ranks);
+	}
 }
 
 int main() {
@@ -71,6 +87,8 @@ int main() {
 	printf("특정 점수 (A, B, C, D, F)를 입력하시오:");
 	scanf_s("%c", &target, 1);
 
+
+	// 함수 호출
 	classifyStudents(scores, target);
 
 	int sum = sumScores(scores);
