@@ -31,8 +31,8 @@ void printSubjectResult(double studentScores[][SUBJECTS], char subjectNames[][CH
 
 int main() {
 	char subjectNames[SUBJECTS][CHARNUM] = { "퀴즈", "중간고사", "기말고사" };
-	char studentNames[STUDENTS][CHARNUM] = { "" }; // 학생 이름이 저장될 배열
-	double studentScores[STUDENTS][SUBJECTS] = { 0.0 }; // 학생의 시험 별 성적이 점수가 저장될 배열
+	char studentNames[STUDENTS][CHARNUM] = { "" };  // 학생 이름이 저장될 배열
+	double studentScores[STUDENTS][SUBJECTS] = { 0.0 };  // 학생의 시험 별 성적이 점수가 저장될 배열
 	printf("학생 %d명의 이름의 입력을 시작합니다. \n", STUDENTS);
 
 	// TODO 1.1: 학생 이름을 입력받는 코드 블록 작성
